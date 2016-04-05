@@ -1,10 +1,10 @@
 from threading import Thread
 import zmq
 
-from sentimentanalysis import SentimentAnalysis
-from parser import Parser
-from partofspeech import PartOfSpeech
-from messaging import Messaging
+from languageprocessing.sentimentanalysis import SentimentAnalysis
+from languageprocessing.parser import Parser
+from languageprocessing.partofspeech import PartOfSpeech
+from languageprocessing.messaging import Messaging
 
 context = zmq.Context()
 text_address = 'tcp://127.0.0.1:5578'
@@ -30,6 +30,7 @@ messager = Messaging(text_address,
                      analyzers)
 
 thread = Thread(target=messager.run)
+thread.setDaemon(True)
 thread.start()
 
 example_text = b'This morning is easy like Sunday Morning'
