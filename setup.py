@@ -11,7 +11,7 @@ with open(os.path.join(directory, 'README.rst')) as f:
 setup(
     name="languageprocessing",
     version='0.0.1',
-    description='Simple language processing with zeromq'
+    description='Simple language processing with zeromq',
     # long_description=long_description,
     url='https://github.com/benhoff/languageprocessing',
     license='GPL3',
@@ -30,6 +30,7 @@ setup(
         'pluginmanager',
         'pyzmq',
         'textblob',
+        'nltk',
         ],
 
     extras_require={
