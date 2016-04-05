@@ -26,6 +26,10 @@ setup(
     author='Ben Hoff',
     author_email='beohoff@gmail.com',
     packages= find_packages(), # exclude=['docs', 'tests']
+    entry_points={'languageprocessing.analyzers': ['sentiment = languageprocessing.sentimentanalysis:SentimentAnalysis'
+                                                   'parts_of_speech = languageprocessing.partofspeech:PartOfSpeech',
+                                                   'parser = languageprocessing.parser:Parser']},
+
     install_requires=[
         'pluginmanager',
         'pyzmq',
